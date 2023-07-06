@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to the Analytics Club!</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        /* Add the integrated styles here */
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        .banner {
+            background-color: red;
+            color: white;
+            padding: 50px;
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .animation {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: fade 4s infinite;
+        }
+
+        @keyframes fade {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        nav {
+            /* Add styles for navigation menu */
+        }
+
+        section {
+            text-align: center;
+            margin: 40px auto;
+            max-width: 800px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            color: #333;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+         }
+
+        .game-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .game-section {
+            flex: 1;
+            border: 2px solid #333;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="banner">
+            <h1>Welcome to the Analytics Club</h1>
+            <div class="animation"></div>
+        </div>
+    </header>
+    <nav>
+        <!-- Navigation menu, if required -->
+    </nav>
+    <section>
+        <h2>About Us</h2>
+        <!-- Add content about the club and welcome message to juniors -->
+    </section>
+    <section>
+        <h2>Fun Memes and Conversations</h2>
+        <!-- Add memes and interesting conversations on analytics -->
+    </section>
+    <section>
+        <h2>Colorful and Engaging Images</h2>
+        <!-- Add colorful and engaging images related to tech and analytics -->
+    </section>
+    <section>
+        <h2>Mini Games</h2>
+        <div class="game-container">
+        <div class="game-section">
+      <html>
+<head>
+  <title>Word Jumble</title>
+  <style>
+    /* Word Jumble - CSS Styling */
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    #jumbleWord {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"] {
+      padding: 5px;
+      width: 150px;
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 5px 10px;
+    }
+
+    #result {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Word Jumble</h1>
+  <p>Unscramble the letters to form a word:</p>
+  <p id="jumbleWord"></p>
+  <input type="text" id="guessInput">
+  <button onclick="checkGuess()">Submit</button>
+  <p id="result"></p>
+
+  <script>
+    var words = ["analytics", "generativeai", "artificial intelligence", "machine learning", "natural language processing","data science", "data analytics", "business analytics", "insights", "knowledge", "managament", "decisions", "data", "Opportunity"];
+    var randomWord = words[Math.floor(Math.random() * words.length)];
+    var jumbleWord = jumble(randomWord);
+    document.getElementById("jumbleWord").textContent = jumbleWord;
+
+    function jumble(word) {
+      var shuffledWord = "";
+      var wordArray = word.split('');
+      while (wordArray.length > 0) {
+        shuffledWord += wordArray.splice(Math.floor(Math.random() * wordArray.length), 1);
+      }
+      return shuffledWord;
+    }
+
+    function checkGuess() {
+      var guess = document.getElementById("guessInput").value.toLowerCase();
+      var result = document.getElementById("result");
+
+      if (guess === randomWord) {
+        result.textContent = "Congratulations! You unscrambled the word.";
+      } else {
+        result.textContent = "Incorrect guess. Try again!";
+      }
+    }
+  </script>
+</body>
+</html>
+    </div>
+ <div class="game-container">
+        <div class="game-section">
+     <html>
+<head>
+  <title>Whack-a-Mole</title>
+  <style>
+    /* Whack-a-Mole - CSS Styling */
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    #gameArea {
+      margin-top: 20px;
+    }
+
+    .hole {
+      width: 100px;
+      height: 100px;
+      background-color: #ccc;
+      border: 2px solid #888;
+      display: inline-block;
+      margin: 10px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .mole {
+      width: 80px;
+      height: 80px;
+      background-color: #888;
+      border-radius: 50%;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Whack-a-Mole</h1>
+  <p>Click on the moles as quickly as possible:</p>
+  <div id="gameArea"></div>
+
+  <script>
+    var gameArea = document.getElementById("gameArea");
+    var score = 0;
+    var timeLeft = 30;
+    var timerId;
+
+    function startGame() {
+      score = 0;
+      timeLeft = 30;
+      gameArea.innerHTML = "";
+      clearInterval(timerId);
+      updateScore();
+
+      for (var i = 0; i < 9; i++) {
+        var hole = document.createElement("div");
+        hole.className = "hole";
+        hole.onclick = whackMole;
+        gameArea.appendChild(hole);
+
+        var mole = document.createElement("div");
+        mole.className = "mole";
+        hole.appendChild(mole);
+      }
+
+      timerId = setInterval(function() {
+        var holes = gameArea.getElementsByClassName("hole");
+        var randomHole = Math.floor(Math.random() * holes.length);
+
+        hideMoles();
+        showMole(holes[randomHole]);
+      }, 1000);
+
+      setTimeout(endGame, 30000);
+    }
+
+    function hideMoles() {
+      var moles = gameArea.getElementsByClassName("mole");
+      for (var i = 0; i < moles.length; i++) {
+        moles[i].style.display = "none";
+      }
+    }
+
+    function showMole(hole) {
+      var mole = hole.getElementsByClassName("mole")[0];
+      mole.style.display = "block";
+    }
+
+    function whackMole() {
+      var mole = this.getElementsByClassName("mole")[0];
+      mole.style.display = "none";
+      score++;
+      updateScore();
+    }
+
+    function updateScore() {
+      document.getElementById("score").textContent = "Score: " + score;
+    }
+
+    function endGame() {
+      clearInterval(timerId);
+      alert("Game Over! Your final score is: " + score);
+    }
+  </script>
+
+  <button onclick="startGame()">Start Game</button>
+  <p id="score">Score: 0</p>
+  <p id="timeLeft">Time Left: 30 seconds</p>
+</body>
+</html>
+    </div>
+    </section>
+    <footer>
+	<img src="C:\Users\taran\Downloads\X-Insights.png" alt="Analytics Club Logo">
+        <!-- Add the logo at the bottom of the page -->
+	</footer>
+<footer>
+        <div class="footer-content">
+            <div class="social-media">
+                <a href="https://www.instagram.com/x_insights1/" target="_blank">
+                    <img src="C:\Users\taran\Downloads\instag.png" alt="X-Insights">
+                </a>
+                <a href="https://in.linkedin.com/company/x-insights-the-analytics-club-of-xime-bangalore" target="_blank">
+                    <img src="C:\Users\taran\Downloads\linkedin png.png" alt="LinkedIn">
+                </a>
+            </div>
